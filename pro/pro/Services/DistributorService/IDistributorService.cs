@@ -8,5 +8,6 @@ namespace pro.Services.DistributorService
 
         string AddDistributor(Distributor distributor);
         string RemoveDistributor(Guid id);
+        string DistributorItems(string name);
     }
 }

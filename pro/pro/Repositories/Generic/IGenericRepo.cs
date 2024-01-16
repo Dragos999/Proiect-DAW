@@ -13,6 +13,10 @@ namespace pro.Repositories.Generic
         //Delete
         string DeleteById(Guid id);
 
+        //Update
+        string Update(Ent entity);
+
+
         //Find
 
         Task<Ent> FindById(Guid id);

@@ -30,5 +30,9 @@ namespace pro.Services.DistributorService
             string mes2=_distributorRepo.Save();
             return (mes1 + "\n" + mes2);
         }
+        public string DistributorItems(string name)
+        {
+            return _distributorRepo.DistributorItems(name);
+        }
     }
 }

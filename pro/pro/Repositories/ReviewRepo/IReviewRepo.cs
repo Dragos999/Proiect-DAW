@@ -4,5 +4,6 @@ namespace pro.Repositories.ReviewRepo
 {
     public interface IReviewRepo:IGenericRepo<Review>
     {
+        Review getReviewByUserId(Guid id);
     }
 }

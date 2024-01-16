@@ -7,7 +7,8 @@ namespace pro.Models
     {
         
         public Guid userId { get; set; }
-        public User user { get; set; }
+        public int NrOfStars { get; set; }
+        public User? user { get; set; }
         public string Description { get; set; }
     }
 }

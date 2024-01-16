@@ -5,5 +5,7 @@ namespace pro.Repositories.DistributorRepo
 {
     public interface IDistributorRepo:IGenericRepo<Distributor>
     {
+        string DistributorItems(string name);
     }
+
 }

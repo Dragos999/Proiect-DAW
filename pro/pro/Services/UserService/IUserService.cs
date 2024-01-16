@@ -10,6 +10,7 @@ namespace pro.Services.UserService
 
         string RemoveUser(Guid id);
 
-        List<string> GetUserOrders(Guid id);
+        List<string> GetUserOrders(string name);
+        string UpdateUserReview(string name,int nrOfStars,string description);
     }
 }

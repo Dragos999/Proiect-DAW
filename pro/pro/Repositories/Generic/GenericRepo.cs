@@ -28,6 +28,7 @@ namespace pro.Repositories.Generic
             var e = _t.Find(entity.Id);
             if (e == null)
             {
+                _t.Add(entity);
                 return ("Added successfully!");
             }
             else
@@ -35,6 +36,22 @@ namespace pro.Repositories.Generic
                 return ("Failed!");
             }
             
+        }
+
+        //Update
+        public string Update(Ent entity)
+        {
+            var ent = _t.FirstOrDefault(e => e.Id == entity.Id);
+            if (ent != null)
+            {
+                
+                _t.Update(entity);
+                return ("Update successfull!");
+            }
+            else
+            {
+                return ("Update failed!");
+            }
         }
 
         //Find

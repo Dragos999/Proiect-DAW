@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using pro.Data;
 
@@ -11,9 +12,11 @@ using pro.Data;
 namespace pro.Migrations
 {
     [DbContext(typeof(proContext))]
-    partial class proContextModelSnapshot : ModelSnapshot
+    [Migration("20240116185129_Migration2")]
+    partial class Migration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,9 +94,6 @@ namespace pro.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NrOfStars")
-                        .HasColumnType("int");
 
                     b.Property<Guid>("userId")
                         .HasColumnType("uniqueidentifier");

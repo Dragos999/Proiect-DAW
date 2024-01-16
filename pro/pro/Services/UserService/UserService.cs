@@ -1,4 +1,5 @@
 ﻿using pro.Models;
+using pro.Repositories.ReviewRepo;
 using pro.Repositories.UserRepo;
 
 namespace pro.Services.UserService
@@ -6,11 +7,11 @@ namespace pro.Services.UserService
     public class UserService : IUserService
     {
         private readonly IUserRepo _userRepo;
-
-        public UserService(IUserRepo userRepo)
+        private readonly IReviewRepo _reviewRepo;
+        public UserService(IUserRepo userRepo,IReviewRepo reviewRepo)
         {
             _userRepo = userRepo;
-            
+            _reviewRepo = reviewRepo;
         }
         public async Task<List<User>> GetUsers()
         {
@@ -32,9 +33,20 @@ namespace pro.Services.UserService
             return (mes1 + "\n" + mes2);
         }
 
-        public List<string> GetUserOrders(Guid id)
+        public List<string> GetUserOrders(string name)
         {
-            return _userRepo.UsrOrders(id);
+            return _userRepo.UsrOrders(name);
+        }
+        public string UpdateUserReview(string name, int nrOfStars, string description)
+        {
+            var usr = _userRepo.GetUserByUsername(name);
+            var rev = _reviewRepo.getReviewByUserId(usr.Id);
+
+            rev.NrOfStars = nrOfStars;
+            rev.Description = description;
+            string mes1= _reviewRepo.Update(rev);
+            string mes2 = _reviewRepo.Save();
+            return (mes1 + "\n" + mes2);
         }
     }
 }
