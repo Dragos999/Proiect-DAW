@@ -24,6 +24,7 @@ namespace pro.Controllers
         public async Task<List<User>> GetUsers()
         {
             return await _userService.GetUsers();   
+            
         }
     
 
@@ -39,10 +40,17 @@ namespace pro.Controllers
             return _userService.RemoveUser(id);
         }
         [HttpGet("UsrOrders")]
-        public List<string> GetUserOrders(Guid id)
+        public List<string> GetUserOrders(string name)
         {
-            return _userService.GetUserOrders(id);
+            return _userService.GetUserOrders(name);
         }
 
+        [HttpPut]
+        public string UpdateUserReview(string name,int nrOfStars,string description)
+        {
+            return _userService.UpdateUserReview(name,nrOfStars,description);
+        }
+
+      
     }
 }

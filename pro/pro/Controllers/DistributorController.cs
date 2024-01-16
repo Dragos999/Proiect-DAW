@@ -30,5 +30,10 @@ namespace pro.Controllers
         {
             return _distributorService.RemoveDistributor(id);
         }
+        [HttpGet("GetDistIt")]
+        public string DistributorItems(string name)
+        {
+            return _distributorService.DistributorItems(name);
+        }
     }
 }
