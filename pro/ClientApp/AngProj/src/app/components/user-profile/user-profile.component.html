@@ -1,0 +1,22 @@
+<h2>User Details</h2>
+      <div *ngIf="orders.length > 0">
+      <p>UserName: {{ username }}</p>
+      <p>Orders:</p>
+      <ul>
+        <li *ngFor="let order of (orders|sort)">{{order}}</li>
+        </ul>
+      </div>
+      <div *ngIf="orders.length === 0">
+          <p>No orders made by this user</p>
+      </div>
+      <h3>Review:</h3>
+      <p>Number of stars: {{nrOfStars}}</p>
+      <div>Description: 
+        <div id="descId">
+          {{description}}
+
+        </div>
+        <button ShowHide >show/hide</button>
+      </div>
+      
+      
