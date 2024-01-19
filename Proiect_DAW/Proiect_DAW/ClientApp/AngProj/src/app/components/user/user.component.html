@@ -1,0 +1,36 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+  
+<mat-grid-tile>
+<mat-grid-tile-header> Actions</mat-grid-tile-header>
+<ul>
+  <li>
+    <a [routerLink]="['/item']">Items</a>
+  </li>
+  <li>
+    <a [routerLink]="['/distributor']">See distributors</a>
+  </li>
+  <li>
+    <a [routerLink]="['/review']">Add review</a>
+  </li>
+  <li>
+    <a [routerLink]="['/admin']">Admin page</a>
+  </li>
+</ul>
+
+</mat-grid-tile>
+<mat-grid-tile >
+    
+    <mat-grid-tile-header >
+      <h2 >Users</h2>
+    </mat-grid-tile-header>
+
+<ul >
+  <li *ngFor="let user of users">
+  <a [routerLink]="['/user', user.username]">{{ user.username }}</a>
+  </li>
+</ul>
+
+</mat-grid-tile>
+</mat-grid-list>
+
+

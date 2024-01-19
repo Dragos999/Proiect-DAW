@@ -1,0 +1,21 @@
+
+<form [formGroup]="rev">
+    <hr>
+    
+    <mat-form-field >
+        <mat-label>Description</mat-label>
+        <input matInput type="string"  formControlName="description">
+        
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Number of stars</mat-label>
+        <mat-select formControlName="nrOfStars">
+          @for (star of stars; track star) {
+            <mat-option [value]="star.value" >{{star.value}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button (click)="addRev()" color="accent">Add review</button>
+      <button mat-raised-button (click)="editRev()" color="primary">Edit review</button>
+    </form>
+    <div>{{message}}</div>
