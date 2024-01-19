@@ -1,9 +1,0 @@
-<h1>You are about to order a new item!</h1>
-<form [formGroup]="newOrder">
-<mat-form-field>
-    <mat-label >Adress</mat-label>
-    <input matInput type="string"  formControlName="address">
-  </mat-form-field>
-</form>
-<button mat-raised-button (click)="placeOrder()" color="primary">PlaceOrder</button>
-<h2>{{message}}</h2>
